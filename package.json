@@ -1,0 +1,30 @@
+{
+  "name": "jobhunting",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "ajv": "^6.5.1",
+    "axios": "^0.18.0",
+    "flow": "^0.2.3",
+    "lodash": "^4.17.10",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "react-router-transition": "^1.2.1",
+    "react-scripts": "1.1.4",
+    "react-sparklines": "^1.7.0",
+    "react-transition-group": "^2.4.0",
+    "redux": "^4.0.0",
+    "redux-promise": "^0.6.0",
+    "youtube-api-search": "0.0.5"
+  },
+  "homepage": "https://github.com/ShuaiLiAU/job-hunting",
+
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
