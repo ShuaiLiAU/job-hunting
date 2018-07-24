@@ -23,7 +23,7 @@ export default PostReducer;
 
 //黑科技：
 
-//如果转换数字对象 -> key 对象
+//如果转换数組对象成一個對象對象，並且內部結構為 -> key 对象
 //使用 '_.mapKey(数组对象，想要用对象的哪一个元素进行作为Key)'
 //举例： const post=[{id: 4， title:'hi'}, {id:25, title:'bye'}, {id:36, title:'sup'}]
 //      const result = _.mapKeys(post, 'id');

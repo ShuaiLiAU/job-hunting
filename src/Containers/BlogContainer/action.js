@@ -5,7 +5,7 @@ const API_KEY='?key=12497828';
 
 export default function fetchPosts(){
   const request = Axios.get(`${ROOT_URL}/posts${API_KEY}`);
-  console.log("successful!");
+  console.log(request);
   return{
     type:"FETCH_REQUEST",
     payload: request

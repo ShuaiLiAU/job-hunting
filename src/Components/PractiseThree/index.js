@@ -3,20 +3,15 @@ import React, {Component} from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import PageOne from './PageOne.js';
 import PageTwo from './PageTwo.js';
-import {connect} from 'react-redux';
-import fetchPosts from '../../Containers/BlogContainer/action.js';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import './PractiseThree.css';
 
 
-class Main extends Component{
 
-  componentDidMount(){
-    this.props.fetchPosts()
-  }
+export default class Main extends Component{
+
 
   render(){
-    console.log(this.props.mainState)
     return(
       <div>
         <BrowserRouter>
@@ -44,14 +39,12 @@ class Main extends Component{
   }
 }
 
-function mapStateToProps(state){
-  return {
-    mainState: state.PostReducer,
-  }
-}
 
-export default connect(mapStateToProps,{fetchPosts})(Main);
 
+
+
+
+//再次黑科技： 一般情況下，用map來進行輸出array，但是當輸出是object，用_.map()來進行輸出
 
 //<Route render={() => <div>Not Found</div>} /> 这段话必须放在<switch>序列的的最后面
 
