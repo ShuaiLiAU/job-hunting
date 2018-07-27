@@ -33,8 +33,10 @@ class PageTwo extends Component {
   onSubmit(values){
     //this === component
     //values.preventDefault()
-    console.log(values);
-    this.props.createPost(values);
+    // this.props.history.push('/pageone')
+    this.props.createPost(values, ()=>{
+      this.props.history.push('/PageOne');
+    })
   }
 
   render(){
@@ -78,7 +80,6 @@ class PageTwo extends Component {
       </div>
     )
   }
-
 }
 
 function validate (values){

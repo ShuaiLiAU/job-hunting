@@ -6,12 +6,12 @@ import _ from 'lodash';
 
 class PageOne extends Component {
 
-  componentDidMount(){
-    this.props.fetchPosts()
-  }
+  // componentDidMount(){
+  //   this.props.fetchPosts()
+  // }
 
   test(){
-    const a = _.map(this.props.mainState)
+    const a = _.map(this.props.mainState.pageTwoState)
     return a.map(state=>{
       console.log(state.id)
       return(

@@ -2,6 +2,8 @@
 import _ from 'lodash';
 
 let DefaultState={
+  pageOneState:{},
+  pageTwoState:[],
 
 }
 
@@ -9,11 +11,15 @@ const PostReducer = (state={DefaultState}, action)=>{
 
   if(action.type==="FETCH_REQUEST"){
 
-    return _.mapKeys(action.payload.data, 'id')
-
+    return {
+      ...state, pageOneState: _.mapKeys(action.payload.data, 'id')
+    }
   }
+
   if(action.type === "CREATE_POST"){
-    return 
+    return{
+      ...state, pageTwoState: action.payload.data
+    }
   }
 
   return state;
