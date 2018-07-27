@@ -12,6 +12,9 @@ const PostReducer = (state={DefaultState}, action)=>{
     return _.mapKeys(action.payload.data, 'id')
 
   }
+  if(action.type === "CREATE_POST"){
+    return 
+  }
 
   return state;
 }

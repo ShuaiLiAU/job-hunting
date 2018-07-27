@@ -3,14 +3,11 @@ import React, {Component} from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import PageOne from './PageOne.js';
 import PageTwo from './PageTwo.js';
+import PageThree from './PageThree.js';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import './PractiseThree.css';
 
-
-
 export default class Main extends Component{
-
-
   render(){
     return(
       <div>
@@ -26,7 +23,8 @@ export default class Main extends Component{
                   <Switch location={location}>
                     <Route path="/PageOne" exact component={PageOne}/>
                     <Route path="/PageTwo" exact component={PageTwo}/>
-                    <Route path="/Page100" exact render={()=><p>this is the page no 100</p>}/>
+                    <Route path="/PageThree" exact component={PageThree}/>
+                    <Route path="/PageFour" exact render={()=><p> This is the page No.Three </p>}/>
                     <Route render={() => <div>Not Found</div>} />
                   </Switch>
                 </CSSTransition>
@@ -38,11 +36,6 @@ export default class Main extends Component{
     )
   }
 }
-
-
-
-
-
 
 //再次黑科技： 一般情況下，用map來進行輸出array，但是當輸出是object，用_.map()來進行輸出
 

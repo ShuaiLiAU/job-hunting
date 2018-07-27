@@ -19,7 +19,7 @@ class PageOne extends Component {
           <li key={state.id}>
             {state.id}
           </li>
-      </div>
+        </div>
       )
     })
   }
@@ -37,18 +37,11 @@ class PageOne extends Component {
   render(){
     console.log(this.props.mainState)
     return(
-      <div style={{
-          backgroundColor: 'red',
-          position: 'absolute',
-          left: 0,
-          right: 0,
-          top: 0,
-          bottom: 0,
-      }}>
-      <Link to="/PageTwo">
-        <p style={{fontSize: 13, color: 'green',}}>this is the first page</p>
-      </Link>
-      {this.test()}
+      <div >
+        <Link to="/PageTwo">
+          <p style={{fontSize: 13, color: 'green',}}>this is the first page</p>
+        </Link>
+        {this.test()}
       </div>
     )
   }
