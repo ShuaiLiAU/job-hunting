@@ -3,7 +3,7 @@ import _ from 'lodash';
 
 let DefaultState={
   pageOneState:{},
-  pageTwoState:[],
+  pageTwoState:{},
 
 }
 
@@ -17,15 +17,26 @@ const PostReducer = (state={DefaultState}, action)=>{
   }
 
   if(action.type === "CREATE_POST"){
+    console.log(action.payload.data)
     return{
       ...state, pageTwoState: action.payload.data
     }
   }
 
+
   return state;
 }
 
 export default PostReducer;
+
+//for ES5
+// if (action.type==="FETCH_POST"){
+//   const post = action.payload.data;
+//   const newState = {...state};
+//   newState[post.id]=post;
+//   return newState;
+// }
+
 
 //action.payload.data， 就等于正常意义下的respones.data
 //注意， 在第一个if里面，如果加入的是{}则程序报错，如果改成()或者没有任何括号，程序正常运行

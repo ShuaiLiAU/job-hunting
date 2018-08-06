@@ -23,7 +23,7 @@ export default class Main extends Component{
                   <Switch location={location}>
                     <Route path="/PageOne" exact component={PageOne}/>
                     <Route path="/PageTwo" exact component={PageTwo}/>
-                    <Route path="/PageThree" exact component={PageThree}/>
+                    <Route path="/Page/:id" exact component={PageThree}/>
                     <Route path="/PageFour" exact render={()=><p> This is the page No.Three </p>}/>
                     <Route render={() => <div>Not Found</div>} />
                   </Switch>
@@ -40,7 +40,7 @@ export default class Main extends Component{
 //再次黑科技： 一般情況下，用map來進行輸出array，但是當輸出是object，用_.map()來進行輸出
 
 //<Route render={() => <div>Not Found</div>} /> 这段话必须放在<switch>序列的的最后面
-
+//因為switch裡面的元素，總是會觸發第一個route
 //这个exact，保证路径不会出错，因此必须用！！！！
 //黑科技，快看： 本来是路径+component的组合，但是如果不想倒入外部component, 则可以写成上面的形式，即用render
 //这里面render的作用和原本的component一样，都是把path 绑定到一个能够显示的页面，区别就是，一个是import进来的

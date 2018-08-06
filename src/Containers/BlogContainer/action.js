@@ -14,10 +14,18 @@ export default function fetchPosts(){
 
 export function createPost(values, callback){
   const request = axios.post(`${ROOT_URL}/posts${API_KEY}`, values)
-  .then(()=>callback());
+  // .then(()=>callback());
   console.log(request)
   return{
     type: "CREATE_POST",
+    payload: request
+  }
+}
+
+export function fetchPost(id){
+  const request= axios.get(`${ROOT_URL}/posts/${id}${API_KEY}`);
+  return {
+    type: "FETCH_POST",
     payload: request
   }
 }
