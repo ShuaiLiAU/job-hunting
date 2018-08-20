@@ -9,8 +9,9 @@ import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
 import reducer from './Reducers/';
 import promise from 'redux-promise';
+import thunk from 'redux-thunk';
 
-const store = createStore(reducer, applyMiddleware(promise));
+const store = createStore(reducer, applyMiddleware(promise, thunk));
 
 ReactDOM.render(
   <Provider store={store}>

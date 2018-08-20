@@ -4,6 +4,7 @@ import _ from 'lodash';
 let DefaultState={
   pageOneState:{},
   pageTwoState:{},
+  pageThreeState:{},
 
 }
 
@@ -17,12 +18,19 @@ const PostReducer = (state={DefaultState}, action)=>{
   }
 
   if(action.type === "CREATE_POST"){
-    console.log(action.payload.data)
+    // console.log(action.payload.data)
     return{
       ...state, pageTwoState: action.payload.data
     }
   }
 
+  if(action.type === "FETCH_POST"){
+    console.log(action.payload)
+    return{
+      ...state, pageThreeState: action.payload
+      //[action.payload.data.id] 設置了一個新的key，注意，這裡不是數組
+    }
+  }
 
   return state;
 }

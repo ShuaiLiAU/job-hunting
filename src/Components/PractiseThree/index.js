@@ -24,7 +24,7 @@ export default class Main extends Component{
                     <Route path="/PageOne" exact component={PageOne}/>
                     <Route path="/PageTwo" exact component={PageTwo}/>
                     <Route path="/Page/:id" exact component={PageThree}/>
-                    <Route path="/PageFour" exact render={()=><p> This is the page No.Three </p>}/>
+                    <Route path="/PageFour" exact render={()=><p> This is the page No.Four </p>}/>
                     <Route render={() => <div>Not Found</div>} />
                   </Switch>
                 </CSSTransition>
