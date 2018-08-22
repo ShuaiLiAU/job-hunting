@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { fetchPost } from '../../Containers/BlogContainer/action.js';
+import { fetchPost, deletePost } from '../../Containers/BlogContainer/action.js';
+import {Link} from 'react-router-dom';
 
 class PageThree extends Component {
   constructor(props){
@@ -20,6 +21,12 @@ class PageThree extends Component {
   //   // this.props.fetchPost(id);
   //   this.setState({id: this.props.post.pageThreeState})
   // }
+  onDeleteClick(){
+    const id = this.props.match.params.id;
+    this.props.deletePost(id, ()=>{
+      this.props.history.push('/');
+    });
+  }
 
   render(){
     if(this.props.post.pageThreeState){
@@ -27,19 +34,17 @@ class PageThree extends Component {
       console.log(this.props.post.pageThreeState.id)
       return(
         <div>
+          <Link to='/PageOne'><button style={{margin:'30px'}}>Back to index</button></Link>
+          <button classname='xxx' onClick={()=>this.onDeleteClick()}>Delete Post</button>
           <p style={{fontSize: 13, color: 'green',}}> this is the third page </p>
-          <h3></h3>
+          <h1>{this.props.post.pageThreeState.title}</h1>
+          <h3>{this.props.post.pageThreeState.id}</h3>
         </div>
       )
     }
     return (
-      <div>nothing has been gotten</div>
+      <div>loading......</div>
     )
-
-
-    // const {id} = this.props.post.pageThreeState
-
-
   }
 }
 
@@ -50,4 +55,4 @@ function mapStateToProps(state){
   };
 }
 
-export default connect(mapStateToProps, {fetchPost})(PageThree);
+export default connect(mapStateToProps, {fetchPost, deletePost})(PageThree);

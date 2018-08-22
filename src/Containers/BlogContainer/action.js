@@ -15,7 +15,7 @@ export default function fetchPosts(){
 
 export function createPost(values, callback){
   const request = axios.post(`${ROOT_URL}/posts${API_KEY}`, values)
-  // .then(()=>callback());
+  //.then(()=>callback());
   // every time run this function, the page will refresh, will fix this later
   console.log(request)
   return{
@@ -43,6 +43,15 @@ function afterFetchPost(request){
      type: "FETCH_POST",
      payload: request
    }
+}
+
+export function deletePost(id, callback){
+  const request = axios.delete(`${ROOT_URL}/posts/${id}${API_KEY}`)
+  .then(()=>callback());
+  return{
+    type: "DELETE_POST",
+    payload: id
+  }
 }
 
 

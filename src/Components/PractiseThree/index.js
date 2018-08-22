@@ -25,7 +25,13 @@ export default class Main extends Component{
                     <Route path="/PageTwo" exact component={PageTwo}/>
                     <Route path="/Page/:id" exact component={PageThree}/>
                     <Route path="/PageFour" exact render={()=><p> This is the page No.Four </p>}/>
-                    <Route render={() => <div>Not Found</div>} />
+                    <Route render={() => {return (
+                        <div>
+                          <p style={{margin: '50px', color:'blue', fontSize: '50px'}}>
+                            this is the index page
+                          </p>
+                        </div>
+                      )}} />
                   </Switch>
                 </CSSTransition>
               </TransitionGroup>

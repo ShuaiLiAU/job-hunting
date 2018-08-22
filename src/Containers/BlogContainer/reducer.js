@@ -31,6 +31,12 @@ const PostReducer = (state={DefaultState}, action)=>{
       //[action.payload.data.id] 設置了一個新的key，注意，這裡不是數組
     }
   }
+  if(action.type==="DELETE_POST"){
+
+    return{
+      ...state, pageThreeState: _.omit(state, action.payload)
+    }
+  }
 
   return state;
 }
